@@ -38,8 +38,4 @@ export type NightDigest = {
 // Null when the night has no file, which includes a `night` that isn't YYYY-MM-DD, because routes
 // pass it straight from the URL and it must never reach the path. An empty file is a
 // NightDigest with no rows. Bad lines are counted, never thrown.
-// Stub until #3: it swaps the body for `export { readNight } from './read.js'`, so callers can
-// import from this file now and keep that import.
-export function readNight(runsDir: string, night: string): NightDigest | null {
-  throw new Error(`readNight is not implemented yet (#3): ${runsDir}, ${night}`);
-}
+export { readNight } from './read.js';
