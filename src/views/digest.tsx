@@ -43,7 +43,7 @@ export function DigestPage({ digest }: { digest: NightDigest }) {
               ))}
             </tbody>
           </table>
-          {digest.badLines > 0 && <p class="mute">{digest.badLines} bad lines skipped</p>}
+          {digest.badLines > 0 && <p class="mute">{digest.badLines} bad {digest.badLines === 1 ? 'line' : 'lines'} skipped</p>}
         </>
       )}
     </>

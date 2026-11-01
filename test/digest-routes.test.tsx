@@ -86,7 +86,9 @@ describe('GET /digest/:night', () => {
   it('gives 200 for a file with a bad line', async () => {
     const res = await app.request('/digest/2026-01-03');
     expect(res.status).toBe(200);
-    expect(await res.text()).toContain('only/job');
+    const html = await res.text();
+    expect(html).toContain('only/job');
+    expect(html).toContain('1 bad line skipped');
   });
 });
 
